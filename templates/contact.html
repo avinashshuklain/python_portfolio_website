@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title%} Contact
+{% endblock title%}
+
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="static/images/contact-us.jpg" class="d-block w-100" alt="...">
+    <h3 class="text-center my-4 h1">Contact Us</h3>
+</div>
+<div class="container my-2">
+    <form class="row g-3" method="post" action="/contact">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email">
+          </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address1">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="address2">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="inputCity" name="city">
+        </div>
+        
+        <div class="col-md-6">
+          <label for="inputZip" class="form-label">Phone</label>
+          <input type="number" class="form-control" id="inputZip" name="phone">
+        </div>
+        
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+</div>
+{% endblock body %}
